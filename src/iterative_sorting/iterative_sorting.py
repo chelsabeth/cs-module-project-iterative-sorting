@@ -2,19 +2,21 @@
 def selection_sort(arr):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
+        sorted_boundary = i
+        smallest_index = sorted_boundary
         # TODO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
-        for elem in range(i + 1, len(arr)):
-            if arr[elem] < arr[cur_index]:
-                cur_index = elem
+        # iterate through the unsorted portion of the arr
+        # finds the index of the smallest elem in the unsorted portion 
+        for unsorted_index in range(sorted_boundary, len(arr)):
+            if arr[unsorted_index] < arr[smallest_index]:
+                smallest_index = unsorted_index
 
         # TODO: swap
         # Your code here
-        # after finding the lowest item of the unsorted regions, swap with the first unsorted item
-        arr[i], arr[cur_index] = arr[cur_index], arr[i]
+        # after finding the index of the smallest elem of the unsorted regions, swap with the first unsorted item
+        arr[smallest_index], arr[sorted_boundary] = arr[sorted_boundary], arr[smallest_index]
 
     return arr
 
@@ -22,15 +24,17 @@ def selection_sort(arr):
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
-        # We go through the list as many times as there are elements
-    for i in range(len(arr)):
-        # We want the last pair of adjacent elements
-        for elem in range(len(arr) - 1):
+        # traverses the arr
+        # loop until no more swaps
+    swaps_occurred = True
+
+    while swaps_occurred:
+        swaps_occurred = False
+        for elem in range(0, len(arr) - 1):
             if arr[elem] > arr[elem+1]:
                 # Swap
                 arr[elem], arr[elem+1] = arr[elem+1], arr[elem]
-
-
+                swaps_occurred = True
 
     return arr
 
