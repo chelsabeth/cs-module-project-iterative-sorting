@@ -1,6 +1,28 @@
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
-    pass
+    # NOTE:
+    # saves min and index
+    # sorted part and unsorted part
+    # no switching until the end of the iteration
+    # no item is "pulled out" of the array when comparing 
+    # TODO:
+    # takes the item/next item in the unsorted part and assigns that to be the lowest
+    # goes thorugh the whole array and compares that value to each item
+    # if another item in the arr is less than the current lowest, assign that to be the new lowest
+    # continues through whole array
+    # then switches with the index old lowest index 
+    # in order to go through the whole array, get the length of the array
+    # and increment one time until the length of the array is done 
+
+    for i in range(len(arr)):
+        current_min = elem 
+        # 👆need this to change dynamically to the first item in the unsorted portion of the array
+        for elem in arr:
+            if elem < current_min:
+                elem = current_min # might have to switch 
+    
+
+
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
