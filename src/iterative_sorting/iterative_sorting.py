@@ -62,17 +62,21 @@ def bubble_sort(arr):
         # take first item in array, compare it to the next item
         # see if first item > compared item 
         # if so, swap the two items - save the index of the comparing items
-    for i in range(0, len(arr) -1):
-        swapped = False
-        first_index = i
-        second_index = i+1
-        right_compare = arr[i]
-        left_compare = arr[i + 1]
+    swapped = True
+
+    # for i in range(0, len(arr) -1):
+    #     first_index = i
+    #     second_index = i+1
+    #     right_compare = arr[i]
+    #     left_compare = arr[i + 1]
         # compare = arr[right_compare], arr[left_compare]
-        for elem in range(0, len(arr)):
-            if right_compare > left_compare: # add to these to move them over each time 
-                arr[first_index], arr[second_index] = arr[second_index],arr[first_index]
+    while swapped:
+        swapped = False
+        for elem in range(0, len(arr) -1):
+            if arr[elem] > arr[elem+1]: # add to these to move them over each time 
+                arr[elem], arr[elem+1] = arr[elem+1],arr[elem]
                 swapped = True
+    return arr
 
 
     # select two elems you want to compare
