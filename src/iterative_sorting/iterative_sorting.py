@@ -63,13 +63,7 @@ def bubble_sort(arr):
         # see if first item > compared item 
         # if so, swap the two items - save the index of the comparing items
     swapped = True
-
-    # for i in range(0, len(arr) -1):
-    #     first_index = i
-    #     second_index = i+1
-    #     right_compare = arr[i]
-    #     left_compare = arr[i + 1]
-        # compare = arr[right_compare], arr[left_compare]
+    
     while swapped:
         swapped = False
         for elem in range(0, len(arr) -1):
