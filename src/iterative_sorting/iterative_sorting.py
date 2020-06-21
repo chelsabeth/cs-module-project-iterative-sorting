@@ -14,12 +14,29 @@ def selection_sort(arr):
     # in order to go through the whole array, get the length of the array
     # and increment one time until the length of the array is done 
 
-    for i in range(len(arr)):
-        current_min = elem 
+    # one thing to save the value
+    # two things to save the index
+
+    for i in range(0, len(arr) -1):
+        first_index = i
+        counting_index = first_index
+        current_min_elem = arr[i]
+        second_index = counting_index
         # 👆need this to change dynamically to the first item in the unsorted portion of the array
-        for elem in arr:
-            if elem < current_min:
-                elem = current_min # might have to switch 
+        for elem in arr[i:]:
+            if elem < current_min_elem:
+                second_index = counting_index
+                current_min_elem = elem
+            counting_index += 1
+
+        arr[second_index], arr[i] = arr[i], arr[second_index]
+    return arr
+
+    
+    
+        
+
+print(selection_sort([3,6,4,1,2]))
     
 
 
