@@ -43,7 +43,40 @@ print(selection_sort([3,6,4,1,2]))
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    pass
+    # TODO: 
+    # compare two items next to one another
+    # if item on left is bigger,
+    # swap the two items 
+    # bigger item should be on the right 
+    # check to see if there is an item on the right
+    # if you go through whole list and nothing is swapable,
+    # then task complete, list is in order
+    # NOTE:
+    # last item in the array is sorted after first time, and so on
+    # you need index - want to swap two index's
+    # you need to save the two index's that you are comparing - may have to swap
+    # have variable for swapped
+
+    # PSUEDO: 
+    # repeat this until there are not swaps - swapped variable is true
+        # take first item in array, compare it to the next item
+        # see if first item > compared item 
+        # if so, swap the two items - save the index of the comparing items
+    for i in range(0, len(arr) -1):
+        swapped = False
+        right_compare = arr[i]
+        left_compare = arr[i + 1]
+        # compare = arr[right_compare], arr[left_compare]
+        for elem in arr:
+            if right_compare > left_compare:
+                arr[right_compare], arr[i] = arr[left_compare], arr[i]
+                swapped = True
+
+
+    # select two elems you want to compare
+
+
+
 '''
 STRETCH: implement the Count Sort function below
 
