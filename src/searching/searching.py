@@ -16,21 +16,29 @@ def binary_search(arr, target):
     # if the mid is lower than our target, take the left side and divide that in half and compare
     # if the mid is higher than our target, that the left side and divide that in half and compare
     # repeat steps each time you divide in half 
-    length = len(arr)
-    mid = length // 2 
-    index = 0
+    # length = len(arr) -1
+    if len(arr) <= 0:
+        return -1
+    mid = (len(arr) -1) // 2 
+    low = 0 
+    high = len(arr) -1
+    # index = 0
 
-    while index is not length:
-        if mid is target:
-            return mid -1
-        elif mid > target:
+    while low != high:
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
         # go left and eliminate the mid and everything else on the right
-            mid = (mid -1) // 2
-        elif mid < target:
+            low = mid +1
+        elif arr[mid] > target:
         # go right and eliminate the mid and everything else on the left
-            mid = (mid +1) // 2
-        index += 1
-    return -1
+            high = mid -1
+        mid = (high + low) // 2
+
+    if arr[mid] == target:
+        return mid
+        # index += 1
+    return -1 # not found
         
 
 # print(binary_search([1,2,3,4,5,6], 3))
